@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>UltraStore - Responsive Shopify Theme for Supermarket, Retail, Grocery, Aliexpress</title>
+		<meta name="description" content="UltraStore - Responsive Shopify Theme for Supermarket, Retail, Grocery, Aliexpress" />
+		<meta name="keywords" content="digital, electronics, hi-tech, supermarket, smartphone, tablet, laptop, accessories" />
+		<meta name="author" content="Tadathemes" />
+		<link rel="shortcut icon" href="img/favicon.png">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+		<link rel="stylesheet" type="text/css" href="css/mockup.css" />
+		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="demo-4">
+		<div class="container">
+			<div id="wrap" class="wrap1">
+				<div class="mockup1">
+					<div class="mobile">
+						<ul id="slideshow-1" class="slideshow">
+							<li class="slideshow__item"><img src="img/small/mobile_1.jpg" alt="Mobile - Home page"/></li>
+							<li class="slideshow__item"><img src="img/small/mobile_2.jpg" alt="Mobile - Collection page"/></li>
+							<li class="slideshow__item"><img src="img/small/mobile_3.jpg" alt="Mobile - Detail page"/></li>
+							<li class="slideshow__item"><img src="img/small/mobile_4.jpg" alt="Mobile - CMS page"/></li>
+							<li class="slideshow__item"><img src="img/small/mobile_5.jpg" alt="Mobile - Cart page"/></li>
+						</ul>
+					</div>
+					<div class="screen">
+						<ul id="slideshow-2" class="slideshow">
+							<li class="slideshow__item current"><img src="img/large/desktop_1.jpg" alt="Desktop - Home page"/></li>
+							<li class="slideshow__item"><img src="img/large/desktop_2.jpg" alt="Desktop - Collection page"/></li>
+							<li class="slideshow__item"><img src="img/large/desktop_3.jpg" alt="Desktop - Detail page"/></li>
+							<li class="slideshow__item"><img src="img/large/desktop_4.jpg" alt="Desktop - CMS page"/></li>
+							<li class="slideshow__item"><img src="img/large/desktop_5.jpg" alt="Desktop - Cart page"/></li>
+						</ul>
+					</div>
+					<header class="codrops-header">
+						<h1>
+							<img src="img/logo.png" />
+							<i>Responsive Shopify Theme <br/>for Supermarket, Retail, Grocery, Aliexpress</i>
+							<div class="action">
+								<span class="buy-now"><a class="btn btn-1" target="_blank" href="https://themeforest.net/item/ultrastore-responsive-shopify-theme-for-supermarket-retail-grocery-aliexpress/23212043?ref=tadatheme">Buy Now</a></span>
+								<span class="buy-now"><a class="btn btn-2" id="linkto" target="_blank" href="https://megastores-1.myshopify.com">View Demo</a></span>
+							</div>
+						</h1>
+					</header>
+				</div>
+			</div>			
+		</div>
+		<script src="js/classie.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+			(function() {
+				window.smoothScroll = function(target) {
+					var scrollContainer = target;
+					do { //find scroll container
+						scrollContainer = scrollContainer.parentNode;
+						if (!scrollContainer) return;
+						scrollContainer.scrollTop += 1;
+					} while (scrollContainer.scrollTop == 0);
+
+					var targetY = 0;
+					do { //find the top of target relatively to the container
+						if (target == scrollContainer) break;
+						targetY += target.offsetTop;
+					} while (target = target.offsetParent);
+
+					scroll = function(c, a, b, i) {
+						i++; if (i > 30) return;
+						c.scrollTop = a + (b - a) / 30 * i;
+						setTimeout(function(){ scroll(c, a, b, i); }, 20);
+					}
+					// start scrolling
+					scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+				}
+				
+				new Slideshow( document.getElementById( 'slideshow-1' ) );
+				setTimeout( function() {
+					new Slideshow( document.getElementById( 'slideshow-2' ) );
+				}, 50 );
+
+								
+			})();
+		</script>
+	</body>
+</html>
